@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SLG</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css" charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script type="text/javascript" src="/js/controllers/CartCtrl.js"></script>
+  </head>
+  <body ng-app="checkout">
+
+    <section id="container">
+
+      <div id="header">
+        <img id="slg-logo" src="/images/slg-logo.png">
+      </div>
+
+      <section id="content" ng-controller="CartCtrl">
+
+        <div id="products">
+          <h2>Available Products</h2>
+
+          <div class="product" ng-repeat="product in products">
+            <p class="add" ng-click="add(product)">+</p>
+            <div class="name">
+              <p>{{ product.productID }} - {{ product.name }}</p>
+              <p class="promo" ng-show="product.promo">{{ product.promo }}</p>
+            </div>
+            <p class="price">{{ product.price | currency }}<p>
+          </div>
+
+          <div class="button-container">
+            <button id="reset" ng-click="clearItems()">Reset Cart</button>
+          </div>
+
+        </div>
+
+        <div id="cart">
+          <h2>Cart</h2>
+
+          <div class="cart-item" ng-repeat="item in items">
+            <i class="fa fa-trash-o" aria-hidden="true" ng-click="remove(item)"></i>
+            <p class="item-name">{{ item.name }} </p>
+            <p class="num-items">{{ item.quantity }}</p>
+            <p class="total-item"></p>
+          </div>
+
+          <p id="total">{{ total() | currency }}</p>
+        </div>
+
+      </section>
+
+    </section>
+
+  </body>
+</html>

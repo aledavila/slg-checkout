@@ -1,0 +1,172 @@
+* { box-sizing: border-box }
+
+html, body {
+  font-family: 'Helvetica Neue';
+}
+
+h2 {
+  color: rgb(0,169,224);
+  font-weight: 200;
+}
+
+#container {
+  background-color: rgb(0,169,224);
+  height: 80px;
+}
+
+#slg-logo {
+  height: 72px;
+  margin-left: 5%;
+  padding-top: 5px;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  padding: 0 7%;
+  margin-top: 3%;
+}
+
+#products {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-right: 2%;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-weight: 500;
+  padding-left: 1%;
+  padding-bottom: 1%;
+}
+
+.product:nth-child(odd) {
+  background-color: rgb(244,244,244);
+}
+
+.add {
+  flex-direction: column;
+  background-color: rgb(120,190,32);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 30px;
+  min-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 200;
+  transition: background 500ms;
+}
+
+.add:hover {
+  color: rgb(120,190,32);
+  background: rgba(120,190,32,0.25);
+  transition: background 500ms;
+}
+
+.name {
+  flex-direction: column;
+  width: 80%;
+  margin-left: 2%;
+  font-size: 20px;
+}
+
+.name > p {
+  margin-bottom: 0px;
+}
+
+.promo {
+  margin-top: .75%;
+  font-size: 12px;
+  color: red;
+}
+
+.price {
+  flex-direction: column;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#reset {
+  background-color: rgb(228,93,191);
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  border: none;
+  border-radius:40px;
+  width: 175px;
+  height: 28px;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+#cart {
+  background-color: rgb(244,244,244);
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  /*height: 80%;*/
+}
+
+#cart > h2 {
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 0 3%;
+}
+
+.fa {
+  flex-direction: column;
+  width: 8%;
+  cursor: pointer;
+}
+
+.item-name {
+  flex-direction: column;
+  width: 60%;
+}
+
+.num-items {
+  flex-direction: column;
+  text-align: center;
+  width: 20%;
+  border-bottom: 1px dotted black;
+}
+
+.total-item {
+  flex-direction: column;
+  color: rgb(120,190,32);
+  text-align: center;
+  width: 30%;
+}
+
+#total {
+  font-size: 30px;
+  color: rgb(120,190,32);
+  text-align: center;
+  border: 8px solid rgb(120,190,32);
+  line-height: 125px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  margin-bottom: 50%;
+}
