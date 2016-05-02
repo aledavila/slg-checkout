@@ -13,13 +13,12 @@ app.controller('CartCtrl', ['$scope', function($scope){
             sum += item.price;
         };
         if (item.productID === 'AP1' && item.quantity >= 3) {
-            discount = (item.price * 0.1) * item.quantity;
-            sum += item.price - discount;
-        } else if (item.productID === 'AP1') {
-            sum += item.price;
+            sum += 4.5 * item.quantity;
+        } else if (item.productID === 'AP1' && item.quantity <= 2) {
+            sum += item.price * item.quantity;
         };
         if (item.productID === 'CF1') {
-          sum += item.price;
+          sum += item.price * item.quantity;
         };
     }
     $scope.products = [
@@ -56,8 +55,8 @@ app.controller('CartCtrl', ['$scope', function($scope){
         } else {
             item.quantity += 1;
             item.total += item.price;
-            $scope.items.push(item);
         }
+        console.log($scope.items);
     };
     $scope.total = function(){
         sum = 0;
