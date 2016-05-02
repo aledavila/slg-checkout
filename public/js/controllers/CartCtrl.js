@@ -56,6 +56,7 @@ app.controller('CartCtrl', ['$scope', function($scope){
         } else {
             item.quantity += 1;
             item.total += item.price;
+            $scope.items.push(item);
         }
     };
     $scope.total = function(){
@@ -65,14 +66,16 @@ app.controller('CartCtrl', ['$scope', function($scope){
         })
         return sum;
     };
-    $scope.remove = function(item) {
-      if (item.quantity >= 1) {
-          item.quantity -= 1;
-      } else {
-          $scope.items -= item;
-      }
+    $scope.remove = function(index, item) {
+      item.quantity = 0;
+      item.total = 0;
+      $scope.items.splice(index, 1);
     };
     $scope.clearItems = function() {
+      $scope.items.forEach(function(item) {
+        item.quantity = 0;
+        item.total = 0;
+      });
       $scope.items = [];
     };
 }])

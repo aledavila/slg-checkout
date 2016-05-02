@@ -43,7 +43,7 @@
           <h2>Cart</h2>
 
           <div class="cart-item" ng-repeat="item in items">
-            <i class="fa fa-trash-o" aria-hidden="true" ng-click="remove(item)"></i>
+            <i class="fa fa-trash-o" aria-hidden="true" ng-click="remove($index, item)"></i>
             <p class="item-name">{{ item.name }} </p>
             <p class="num-items">{{ item.quantity }}</p>
             <p class="total-item">{{ item.total | currency }}</p>
