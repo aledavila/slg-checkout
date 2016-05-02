@@ -35,6 +35,8 @@
             <button id="reset" ng-click="clearItems()">Reset Cart</button>
           </div>
 
+          <p id="message">** Discount will be reflected in the total</p>
+
         </div>
 
         <div id="cart">
@@ -44,9 +46,8 @@
             <i class="fa fa-trash-o" aria-hidden="true" ng-click="remove(item)"></i>
             <p class="item-name">{{ item.name }} </p>
             <p class="num-items">{{ item.quantity }}</p>
-            <p class="total-item"></p>
+            <p class="total-item">{{ item.total | currency }}</p>
           </div>
-
           <p id="total">{{ total() | currency }}</p>
         </div>
 

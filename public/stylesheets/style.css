@@ -111,6 +111,10 @@ h2 {
   cursor: pointer;
 }
 
+#message {
+  font-size: 14px;
+}
+
 #cart {
   background-color: rgb(244,244,244);
   display: flex;
