@@ -48,6 +48,7 @@
             <p class="num-items">{{ item.quantity }}</p>
             <p class="total-item">{{ item.total | currency }}</p>
           </div>
+          <p id="discount" ng-show="discount()">Total savings: - {{ discount() | currency }}</p>
           <p id="total">{{ total() | currency }}</p>
         </div>
 

@@ -56,7 +56,6 @@ app.controller('CartCtrl', ['$scope', function($scope){
             item.quantity += 1;
             item.total += item.price;
         }
-        console.log($scope.items);
     };
     $scope.total = function(){
         sum = 0;
@@ -77,4 +76,11 @@ app.controller('CartCtrl', ['$scope', function($scope){
       });
       $scope.items = [];
     };
+    $scope.discount = function(){
+      var itemsTotal = 0;
+      $scope.items.forEach(function(item){
+          itemsTotal += item.total;
+      })
+      return itemsTotal - $scope.total();
+    }
 }])

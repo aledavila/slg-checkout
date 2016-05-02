@@ -162,6 +162,12 @@ h2 {
   width: 30%;
 }
 
+#discount {
+  font-size: 14px;
+  color: rgb(0,169,224);
+  letter-spacing: .2em;
+}
+
 #total {
   font-size: 30px;
   color: rgb(120,190,32);
