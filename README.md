@@ -1,3 +1,3 @@
 # slg-checkout
 
-Demo: https://studentloangenius-depsmfesip.now.sh
+Demo: https://studentloangenius-aubhlkkmxf.now.sh
